@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarRent"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Car Catalog" 
+        Height="450" 
+        Width="675"
+        ResizeMode="CanMinimize"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/BackGround.jpg"/>
+        </Grid.Background>
+        <Frame
+            Content="Frame#1"
+            x:Name="Frame"
+            NavigationUIVisibility="Hidden"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="655"
+            Height="370"
+            Margin="5,0,0,0" />
     </Grid>
 </Window>
