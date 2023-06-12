@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentCar"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Rent Some Cars" Height="450" Width="800">
     <Grid>
-
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Add Car" Click="AddCar_Click" Margin="10"/>
+            <Button Content="Rent Car" Click="RentCar_Click" Margin="10"/>
+            <Button Content="Return Car" Click="ReturnCar_Click" Margin="10"/>
+            <Button Content="Available Cars" Click="AvailableCars_Click" Margin="10"/>
+        </StackPanel>
     </Grid>
 </Window>
