@@ -20,7 +20,7 @@
             <Button Content="Add Car" Click="AddCar_Click" Margin="10" Width="200" Height="50"/>
             <Button Content="Rent Car" Click="RentCar_Click" Margin="10" Width="200" Height="50"/>
             <Button Content="Return Car" Click="ReturnCar_Click" Margin="10" Width="200" Height="50"/>
-            <Button Content="Available Cars" Click="AvailableCars_Click" Margin="10" Width="200" Height="50"/>
+            <Button Content="All Our Cars" Click="AvailableCars_Click" Margin="10" Width="200" Height="50"/>
         </StackPanel>
     </Grid>
 </Window>
