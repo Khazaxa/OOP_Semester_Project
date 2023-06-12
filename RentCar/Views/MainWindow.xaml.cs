@@ -1,4 +1,5 @@
 ﻿using RentCar.Views;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace RentCar
@@ -11,33 +12,15 @@ namespace RentCar
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
-        private void AddCar_Click(object sender, RoutedEventArgs e)
+        private async void AvailableCars_Click(object sender, RoutedEventArgs e)
         {
-            AddCarView addCarView = new AddCarView();
-            addCarView.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            addCarView.ShowDialog();
-        }
+            await Task.Delay(1); // Minimalne opóźnienie
 
-        private void RentCar_Click(object sender, RoutedEventArgs e)
-        {
-            RentCarView rentCarView = new RentCarView();
-            rentCarView.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            rentCarView.ShowDialog();
-        }
-
-        private void ReturnCar_Click(object sender, RoutedEventArgs e)
-        {
-            ReturnCarView returnCarView = new ReturnCarView();
-            returnCarView.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            returnCarView.ShowDialog();
-        }
-
-        private void AvailableCars_Click(object sender, RoutedEventArgs e)
-        {
             AvailableCarsView availableCarsView = new AvailableCarsView();
             availableCarsView.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            availableCarsView.ShowDialog();
-        }
+            availableCarsView.Show();
 
+            Close();
+        }
     }
 }

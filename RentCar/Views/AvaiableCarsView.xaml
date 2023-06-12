@@ -1,9 +1,10 @@
 ﻿<Window x:Class="RentCar.Views.AvailableCarsView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="All Our Cars" Height="400" Width="600"
+        Title="All Our Cars" Height="450" Width="800"
         Icon="pack://application:,,,/Images/Icon.ico"
-        x:Name="AvailableCarsWindow">
+        x:Name="AvailableCarsWindow"
+        ResizeMode="NoResize">
 
     <Window.Background>
         <ImageBrush ImageSource="../Images/background.jpg" Stretch="UniformToFill"/>
@@ -30,12 +31,22 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="VerticalScrollBarVisibility" Value="Hidden"/>
         </Style>
-
-
-
     </Window.Resources>
     <Grid>
-        <DataGrid Name="CarsList" Width="500" Height="230" VerticalAlignment="Bottom" Margin="0, 0, 0, 20" AutoGenerateColumns="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Buttons -->
+        <DockPanel Grid.Row="0" HorizontalAlignment="Center">
+            <Button Content="Add" Width="80" Height="50" Click="AddButton_Click" Margin="0, 30, 80, 0"/>
+            <Button Content="Edit" Width="80" Click="EditButton_Click" Margin="0, 30, 80, 0"/>
+            <Button Content="Delete" Width="80" Click="DeleteButton_Click" Margin="0, 30, 0, 0"/>
+        </DockPanel>
+
+        <!-- DataGrid -->
+        <DataGrid Grid.Row="1" Name="CarsList" Width="330" Height="230" VerticalAlignment="Bottom" Margin="0, 0, 0, 20" AutoGenerateColumns="False"  IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Brand" Binding="{Binding Brand.Name}" />
