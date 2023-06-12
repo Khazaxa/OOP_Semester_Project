@@ -46,7 +46,7 @@
         </DockPanel>
 
         <!-- DataGrid -->
-        <DataGrid Grid.Row="1" Name="CarsList" Width="330" Height="230" VerticalAlignment="Bottom" Margin="0, 0, 0, 20" AutoGenerateColumns="False"  IsReadOnly="True">
+        <DataGrid Grid.Row="1" Name="CarsList" Width="430" Height="230" VerticalAlignment="Bottom" Margin="0, 0, 0, 20" AutoGenerateColumns="False"  IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Brand" Binding="{Binding Brand.Name}" />
