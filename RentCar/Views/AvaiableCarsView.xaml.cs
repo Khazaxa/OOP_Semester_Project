@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 using RentCar.Models;
 
 namespace RentCar.Views
@@ -27,10 +28,11 @@ namespace RentCar.Views
             InitializeComponent();
 
 
-            using ( CarRentContext _context = new CarRentContext() )
+            using (CarRentContext _context = new CarRentContext())
             {
-                MyCars = _context.Cars.ToList();
+                MyCars = _context.Cars.Include(c => c.Brand).ToList();
             }
+
 
             CarsList.ItemsSource = MyCars;
         }
