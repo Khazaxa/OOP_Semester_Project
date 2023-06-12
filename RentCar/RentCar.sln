@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRent", "CarRent.csproj", "{628CE648-C0BE-4DD6-93FE-B9B01CC00744}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentCar", "RentCar.csproj", "{ED47A534-D56F-4D08-B7D5-7A373228E7A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{628CE648-C0BE-4DD6-93FE-B9B01CC00744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{628CE648-C0BE-4DD6-93FE-B9B01CC00744}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{628CE648-C0BE-4DD6-93FE-B9B01CC00744}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{628CE648-C0BE-4DD6-93FE-B9B01CC00744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED47A534-D56F-4D08-B7D5-7A373228E7A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED47A534-D56F-4D08-B7D5-7A373228E7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED47A534-D56F-4D08-B7D5-7A373228E7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED47A534-D56F-4D08-B7D5-7A373228E7A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C396703C-2C8C-4C2E-ABAC-02F59CDE9756}
+		SolutionGuid = {81C46183-6D6B-4471-8F3F-80E4A869F386}
 	EndGlobalSection
 EndGlobal
