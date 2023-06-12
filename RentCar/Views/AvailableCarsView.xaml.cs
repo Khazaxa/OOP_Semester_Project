@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RentCar.Models;
 
 namespace RentCar.Views
 {
@@ -19,9 +20,19 @@ namespace RentCar.Views
     /// </summary>
     public partial class AvailableCarsView : Window
     {
+        public List<Car> MyCars { get; set; }
+
         public AvailableCarsView()
         {
             InitializeComponent();
+
+
+            using ( CarRentContext _context = new CarRentContext() )
+            {
+                MyCars = _context.Cars.ToList();
+            }
+
+            CarsList.ItemsSource = MyCars;
         }
     }
 }

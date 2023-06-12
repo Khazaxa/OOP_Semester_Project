@@ -15,7 +15,7 @@ public partial class Car
 
     public string RegistrationNumber { get; set; } = null!;
 
-    public virtual Brand Brand { get; set; } = null!;
+    public  Brand Brand { get; set; } = null!;
 
-    public virtual ICollection<Rental> Rentals { get; set; } = new List<Rental>();
+    //public virtual ICollection<Rental> Rentals { get; set; } = new List<Rental>();
 }
