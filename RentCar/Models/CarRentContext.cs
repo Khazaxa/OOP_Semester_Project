@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace RentCar;
+namespace RentCar.Models;
 
 public partial class CarRentContext : DbContext
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RentCar;
+namespace RentCar.Models;
 
 public partial class Brand
 {
