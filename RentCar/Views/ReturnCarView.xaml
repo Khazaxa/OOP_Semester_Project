@@ -2,6 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Return Car" Height="300" Width="400">
+    <Window.Background>
+        <ImageBrush ImageSource="../Images/background.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
     <Grid>
         <!-- Interfejs użytkownika umożliwiający zwrot samochodu -->
     </Grid>

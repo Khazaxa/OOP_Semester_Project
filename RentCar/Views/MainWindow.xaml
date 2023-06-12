@@ -6,12 +6,15 @@
         xmlns:local="clr-namespace:RentCar"
         mc:Ignorable="d"
         Title="Rent Some Cars" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="../Images/background.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Content="Add Car" Click="AddCar_Click" Margin="10"/>
-            <Button Content="Rent Car" Click="RentCar_Click" Margin="10"/>
-            <Button Content="Return Car" Click="ReturnCar_Click" Margin="10"/>
-            <Button Content="Available Cars" Click="AvailableCars_Click" Margin="10"/>
+            <Button Content="Add Car" Click="AddCar_Click" Margin="10" Width="200" Height="50"/>
+            <Button Content="Rent Car" Click="RentCar_Click" Margin="10" Width="200" Height="50"/>
+            <Button Content="Return Car" Click="ReturnCar_Click" Margin="10" Width="200" Height="50"/>
+            <Button Content="Available Cars" Click="AvailableCars_Click" Margin="10" Width="200" Height="50"/>
         </StackPanel>
     </Grid>
 </Window>
