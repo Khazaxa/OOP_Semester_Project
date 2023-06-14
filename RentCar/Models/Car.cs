@@ -17,6 +17,8 @@ namespace RentCar.Models
 
         public virtual Brand Brand { get; set; } = null!;
 
+        public bool IsSelected { get; set; }
+
         //public virtual ICollection<Rental> Rentals { get; set; } = new List<Rental>();
     }
 }

@@ -46,15 +46,15 @@ namespace RentCar.Views
             addCarView.ShowDialog();
         }
 
-        private void EditButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Logika obsługi kliknięcia przycisku Edit
-        }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             // Logika obsługi kliknięcia przycisku Delete
+            DeleteCarView deleteCarView = new DeleteCarView();
+            deleteCarView.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            deleteCarView.ShowDialog();
         }
+
 
         private void Refresh(object sender, RoutedEventArgs e)
         {
