@@ -49,7 +49,7 @@
                 <Image Source="../Images/add.png"/>
             </Button>
             <Button  Width="80" Click="DeleteButton_Click" Height="60" Margin="0, 30, 0, 0">
-                <Image Source="../Images/delete.png"/>
+                <Image Source="../Images/minus.png"/>
             </Button>
         </DockPanel>
         <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top">

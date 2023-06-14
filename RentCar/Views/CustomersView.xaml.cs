@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
+using RentCar.Models;
 
 namespace RentCar.Views
 {
@@ -22,6 +24,7 @@ namespace RentCar.Views
         public CustomersView()
         {
             InitializeComponent();
+            LoadData();
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
@@ -29,6 +32,41 @@ namespace RentCar.Views
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
+        }
+
+        private void LoadData()
+        {
+            using (var context = new CarRentContext())
+            {
+                var query = context.Customers.Include(c => c.Rentals).SelectMany(c => c.Rentals.Select(r => new
+                {
+                    Id = c.Id,
+                    Name = $"{c.FirstName} {c.LastName}",
+                    Email = c.Email,
+                    PhoneNumber = c.Phone,
+                    RentalDate = r.RentalDate,
+                    ReturnDate = r.ReturnDate
+                }));
+
+                var customerRentalDataList = query.OrderBy(c => c.Id).ToList();
+
+                CustomersList.ItemsSource = customerRentalDataList;
+            }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Refresh(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
