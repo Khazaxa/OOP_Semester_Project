@@ -15,13 +15,20 @@ using System.Windows.Shapes;
 namespace RentCar.Views
 {
     /// <summary>
-    /// Interaction logic for RentCarView.xaml
+    /// Interaction logic for CustomersView.xaml
     /// </summary>
-    public partial class RentCarView : Window
+    public partial class CustomersView : Window
     {
-        public RentCarView()
+        public CustomersView()
         {
             InitializeComponent();
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
         }
     }
 }

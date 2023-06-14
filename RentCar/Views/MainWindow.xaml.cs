@@ -14,7 +14,7 @@ namespace RentCar
 
         private async void AvailableCars_Click(object sender, RoutedEventArgs e)
         {
-            await Task.Delay(60); // Minimalne opóźnienie
+            await Task.Delay(50); // Minimalne opóźnienie
 
             AvailableCarsView availableCarsView = new AvailableCarsView();
             availableCarsView.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -23,6 +23,17 @@ namespace RentCar
             Close();
         }
 
-        
+        private async void Customer_Click(object sender, RoutedEventArgs e)
+        {
+            await Task.Delay(50); // Minimalne opóźnienie
+
+            CustomersView customersView = new CustomersView();
+            customersView.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            customersView.Show();
+
+            Close();
+        }
+
+
     }
 }
