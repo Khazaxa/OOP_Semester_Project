@@ -7,6 +7,51 @@
         <ImageBrush ImageSource="../Images/background.jpg" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid>
-        <!-- Interfejs użytkownika do wprowadzania informacji o nowym samochodzie -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto" MinHeight="50.04"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Text="Add Car Record" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Height="48" Width="264"/>
+
+        <!-- Form -->
+        <Grid Grid.Row="1" Margin="40,40,40,40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- ID -->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="ID:" FontSize="20" Foreground="White" VerticalAlignment="Center" Background="#525252" TextAlignment="Center" Margin="0,0,0,10"/>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtID" FontSize="20" Margin="0,0,0,10" TextAlignment="Center"/>
+
+            <!-- Brand -->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Brand:" FontSize="20" Foreground="White" VerticalAlignment="Center" Background="#525252" TextAlignment="Center" Margin="0,0,0,10"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtBrand" FontSize="20" Margin="0,0,0,10" TextAlignment="Center"/>
+
+            <!-- Model -->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Model:" FontSize="20" Foreground="White" VerticalAlignment="Center" Background="#525252" TextAlignment="Center" Margin="0,0,0,10"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtModel" FontSize="20" Margin="0,0,0,10" TextAlignment="Center"/>
+
+            <!-- Year -->
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Year:" FontSize="20" Foreground="White" VerticalAlignment="Center" Background="#525252" TextAlignment="Center" Margin="0,0,0,10"/>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtYear" FontSize="20" Margin="0,0,0,10" TextAlignment="Center"/>
+
+            <!-- Registration Number -->
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Registration Number:" FontSize="20" Foreground="White" VerticalAlignment="Center" Background="#525252" TextAlignment="Center" Margin="0,0,0,10"/>
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtRegistrationNumber" FontSize="20" Margin="0,0,0,10" TextAlignment="Center"/>
+        </Grid>
+
+        <!-- ADD button -->
+        <Button Grid.Row="2" Click="AddButton_Click" x:Name="AddButton" Content="ADD" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,2,0,10" Width="200"/>
     </Grid>
 </Window>

@@ -26,25 +26,18 @@ namespace RentCar.Views
         public AvailableCarsView()
         {
             InitializeComponent();
-            Loaded += AvailableCarsView_Loaded;
-        }
 
-        private async void AvailableCarsView_Loaded(object sender, RoutedEventArgs e)
-        {
-            await LoadDataFromDatabase();
-            CarsList.ItemsSource = MyCars;
-        }
-
-        private async Task LoadDataFromDatabase()
-        {
-            await Task.Delay(10); // Symulacja opóźnienia
 
             using (CarRentContext _context = new CarRentContext())
             {
-                MyCars = await _context.Cars.Include(c => c.Brand).ToListAsync();
+                MyCars = _context.Cars.Include(c => c.Brand).ToList();
             }
-        }
 
+
+            CarsList.ItemsSource = MyCars;
+
+
+        }
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             // Logika obsługi kliknięcia przycisku Add
