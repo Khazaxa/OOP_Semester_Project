@@ -11,9 +11,9 @@ public partial class Rental
 
     public int CustomerId { get; set; }
 
-    public DateTime RentalDate { get; set; }
+    public string RentalDate { get; set; }
 
-    public DateTime ReturnDate { get; set; }
+    public string ReturnDate { get; set; }
 
     public virtual Car Car { get; set; } = null!;
 

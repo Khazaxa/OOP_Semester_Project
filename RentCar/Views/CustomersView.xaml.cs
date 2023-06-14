@@ -38,35 +38,29 @@ namespace RentCar.Views
         {
             using (var context = new CarRentContext())
             {
-                var query = context.Customers.Include(c => c.Rentals).SelectMany(c => c.Rentals.Select(r => new
-                {
-                    Id = c.Id,
-                    Name = $"{c.FirstName} {c.LastName}",
-                    Email = c.Email,
-                    PhoneNumber = c.Phone,
-                    RentalDate = r.RentalDate,
-                    ReturnDate = r.ReturnDate
-                }));
+                var query = context.Customers
+                    .Include(c => c.Rentals)
+                    .SelectMany(c => c.Rentals.DefaultIfEmpty(), (c, r) => new
+                    {
+                        Id = c.Id,
+                        Name = $"{c.FirstName} {c.LastName}",
+                        Email = c.Email,
+                        PhoneNumber = c.Phone,
+                        RentalDate = r != null ? r.RentalDate.ToString() : "",
+                        ReturnDate = r != null ? r.ReturnDate.ToString() : ""
+                    });
 
-                var customerRentalDataList = query.OrderBy(c => c.Id).ToList();
+                var customerDataList = query
+                    .OrderBy(c => c.Id)
+                    .ToList();
 
-                CustomersList.ItemsSource = customerRentalDataList;
+                CustomersList.ItemsSource = customerDataList;
             }
-        }
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void Refresh(object sender, RoutedEventArgs e)
         {
-
+            LoadData();
         }
     }
 }

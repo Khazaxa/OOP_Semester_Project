@@ -39,21 +39,14 @@
                 <Image Source="../Images/return.png"/>
             </Button>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80" Height="80">
-            <Button x:Name="AddButton" Click="AddButton_Click" Height="80" Width="75" Margin="0,0,200,0">
-                <Image Source="../Images/add.png"/>
-            </Button>
-            <Button x:Name="DeleteButton"  Click="DeleteButton_Click"  Height="79" Width="75">
-                <Image Source="../Images/minus.png"/>
-            </Button>
-        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80" Height="80"/>
         <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top">
             <Button Click="Refresh" Width="30" Height="30" Margin="20">
                 <Image Source="../Images/refresh.png"/>
             </Button>
         </DockPanel>
         <!-- DataGrid -->
-        <DataGrid Name="CustomersList" Width="600" Height="200" Margin="0, 150, 10, 0" VerticalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid Name="CustomersList" Width="600" Height="344" Margin="95,0,105,0" VerticalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
