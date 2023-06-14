@@ -52,6 +52,8 @@
         </Grid>
 
         <!-- ADD button -->
-        <Button Grid.Row="2" Click="AddButton_Click" x:Name="AddButton" Content="ADD" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,2,0,10" Width="200"/>
+        <Button Grid.Row="2" Click="AddButton_Click" x:Name="AddButton" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,2,0,10" Width="200" Height="30">
+            <Image Source="../Images/add.png"/>
+        </Button>
     </Grid>
 </Window>

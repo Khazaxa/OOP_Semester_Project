@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Images\add.png" />
     <None Remove="Images\background.jpg" />
+    <None Remove="Images\customerbackground.png" />
     <None Remove="Images\delete.png" />
     <None Remove="Images\Icon.ico" />
     <None Remove="Images\refresh.png" />
@@ -29,6 +30,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\customerbackground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\delete.png">
