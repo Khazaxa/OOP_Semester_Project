@@ -22,8 +22,14 @@ namespace RentCar.Views
     /// </summary>
     public partial class DeleteCarView : Window
     {
+        /// <summary>
+        /// Gets or sets the list of cars to be displayed and selected for deletion.
+        /// </summary>
         public List<Car> MyCars { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the DeleteCarView class.
+        /// </summary>
         public DeleteCarView()
         {
             InitializeComponent();
@@ -33,10 +39,14 @@ namespace RentCar.Views
                 MyCars = _context.Cars.Include(c => c.Brand).ToList();
             }
 
-
             CarsList.ItemsSource = MyCars;
         }
 
+        /// <summary>
+        /// Handles the click event of the DeleteButton.
+        /// </summary>
+        /// <param name="sender">The object that raised the event.</param>
+        /// <param name="e">The event arguments.</param>
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             List<Car> carsToDelete = MyCars.Where(c => c.IsSelected).ToList();
@@ -50,8 +60,5 @@ namespace RentCar.Views
             MyCars.RemoveAll(c => c.IsSelected);
             CarsList.Items.Refresh();
         }
-
-
     }
-
 }

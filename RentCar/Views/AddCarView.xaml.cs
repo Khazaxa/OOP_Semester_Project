@@ -22,11 +22,19 @@ namespace RentCar.Views
     /// </summary>
     public partial class AddCarView : Window
     {
+        /// <summary>
+        /// Initializes a new instance of the AddCarView class.
+        /// </summary>
         public AddCarView()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the click event of the AddButton.
+        /// </summary>
+        /// <param name="sender">The object that raised the event.</param>
+        /// <param name="e">The event arguments.</param>
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -82,9 +90,5 @@ namespace RentCar.Views
                 MessageBox.Show($"An error occurred while adding the car record: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-
-
-
     }
 }

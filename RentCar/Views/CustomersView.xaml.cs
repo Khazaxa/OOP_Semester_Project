@@ -21,12 +21,20 @@ namespace RentCar.Views
     /// </summary>
     public partial class CustomersView : Window
     {
+        /// <summary>
+        /// Initializes a new instance of the CustomersView class.
+        /// </summary>
         public CustomersView()
         {
             InitializeComponent();
             LoadData();
         }
 
+        /// <summary>
+        /// Handles the click event of the Return button.
+        /// </summary>
+        /// <param name="sender">The object that raised the event.</param>
+        /// <param name="e">The event arguments.</param>
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -34,6 +42,9 @@ namespace RentCar.Views
             Close();
         }
 
+        /// <summary>
+        /// Loads the customer data into the CustomersList.
+        /// </summary>
         private void LoadData()
         {
             using (var context = new CarRentContext())
@@ -58,6 +69,11 @@ namespace RentCar.Views
             }
         }
 
+        /// <summary>
+        /// Refreshes the customer data in the CustomersList.
+        /// </summary>
+        /// <param name="sender">The object that raised the event.</param>
+        /// <param name="e">The event arguments.</param>
         private void Refresh(object sender, RoutedEventArgs e)
         {
             LoadData();
