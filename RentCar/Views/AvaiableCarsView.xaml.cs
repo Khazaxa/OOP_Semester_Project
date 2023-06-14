@@ -67,6 +67,11 @@ namespace RentCar.Views
             CarsList.ItemsSource = MyCars;
         }
 
- 
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
+        }
     }
 }

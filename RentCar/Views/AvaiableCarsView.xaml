@@ -39,12 +39,21 @@
         </Grid.RowDefinitions>
 
         <!-- Buttons -->
+        <StackPanel Grid.Row="0" HorizontalAlignment="Left">
+            <Button x:Name="Return" Click="Return_Click" Height="30" Width="30" HorizontalAlignment="Left" Margin="20">
+                <Image Source="../Images/return.png"/>
+            </Button>
+        </StackPanel>
         <DockPanel Grid.Row="0" HorizontalAlignment="Center">
-            <Button Content="Add" Width="80" Height="50" Click="AddButton_Click" Margin="0, 30, 80, 0"/>
-            <Button Content="Delete" Width="80" Click="DeleteButton_Click" Margin="0, 30, 0, 0"/>
+            <Button  Width="80" Height="60" Click="AddButton_Click" Margin="0, 30, 80, 0">
+                <Image Source="../Images/add.png"/>
+            </Button>
+            <Button  Width="80" Click="DeleteButton_Click" Height="60" Margin="0, 30, 0, 0">
+                <Image Source="../Images/delete.png"/>
+            </Button>
         </DockPanel>
         <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top">
-            <Button Click="Refresh" Width="20" Height="20" Margin="20">
+            <Button Click="Refresh" Width="30" Height="30" Margin="20">
                 <Image Source="../Images/refresh.png"/>
             </Button>
         </DockPanel>
