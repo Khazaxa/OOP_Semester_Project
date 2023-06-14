@@ -55,5 +55,18 @@ namespace RentCar.Views
         {
             // Logika obsługi kliknięcia przycisku Delete
         }
+
+        private void Refresh(object sender, RoutedEventArgs e)
+        {
+            using (CarRentContext _context = new CarRentContext())
+            {
+                MyCars = _context.Cars.Include(c => c.Brand).ToList();
+            }
+
+
+            CarsList.ItemsSource = MyCars;
+        }
+
+ 
     }
 }

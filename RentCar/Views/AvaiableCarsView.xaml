@@ -44,6 +44,12 @@
             <Button Content="Edit" Width="80" Click="EditButton_Click" Margin="0, 30, 80, 0"/>
             <Button Content="Delete" Width="80" Click="DeleteButton_Click" Margin="0, 30, 0, 0"/>
         </DockPanel>
+        <DockPanel HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button Click="Refresh" Width="20" Height="20" Margin="20">
+                <Image Source="../Images/refresh.png"/>
+            </Button>
+        </DockPanel>
+
 
         <!-- DataGrid -->
         <DataGrid Grid.Row="1" Name="CarsList" Width="430" Height="230" VerticalAlignment="Bottom" Margin="0, 0, 0, 20" AutoGenerateColumns="False"  IsReadOnly="True">

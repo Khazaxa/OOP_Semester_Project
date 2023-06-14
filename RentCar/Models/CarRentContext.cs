@@ -19,7 +19,7 @@ public partial class CarRentContext : DbContext
 
     public  DbSet<Car> Cars { get; set; }
 
-    public virtual DbSet<Customer> Customers { get; set; }
+    public  DbSet<Customer> Customers { get; set; }
 
     public virtual DbSet<Rental> Rentals { get; set; }
 

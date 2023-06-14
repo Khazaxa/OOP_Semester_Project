@@ -31,17 +31,60 @@ namespace RentCar.Views
         {
             try
             {
-                string selectedID = txtID.Text;
-                string selectedBrandName = txtBrand.Text;
-                string selectedModel = txtModel.Text;
-                string selectedYear = txtYear.Text;
-                string selectedRegistrationNumber = txtRegistrationNumber.Text;
+                string ID = txtID.Text;
+                string BrandName = txtBrand.Text;
+                string Model = txtModel.Text;
+                string Year = txtYear.Text;
+                string RegistrationNumber = txtRegistrationNumber.Text;
+
+                using (CarRentContext _context = new CarRentContext())
+                {
+                    int id;
+                    if (!int.TryParse(ID, out id))
+                    {
+                        // Handle the case when the ID value is not a valid integer
+                        MessageBox.Show("Invalid ID value. Please enter a valid integer.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+
+                    int year;
+                    if (!int.TryParse(Year, out year))
+                    {
+                        // Handle the case when the Year value is not a valid integer
+                        MessageBox.Show("Invalid Year value. Please enter a valid integer.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+
+                    Brand brand = _context.Brands.FirstOrDefault(b => b.Name == BrandName);
+                    if (brand == null)
+                    {
+                        brand = new Brand { Name = BrandName };
+                        _context.Brands.Add(brand);
+                    }
+
+                    Car car = new Car
+                    {
+                        Id = id,
+                        Brand = brand,
+                        Model = Model,
+                        Year = year,
+                        RegistrationNumber = RegistrationNumber
+                    };
+
+                    _context.Cars.Add(car);
+                    _context.SaveChanges();
+
+                    MessageBox.Show("Car added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred while adding the car record: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
         }
+
+
+
+
     }
 }
